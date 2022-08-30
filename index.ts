@@ -27,7 +27,7 @@ const quotes=[
 {
     id:5,
     title:"A man who dares to waste one hour of time has not discovered the value of life.",
-    author:""
+    author:"..."
 },
 {
     id:6,
@@ -73,5 +73,5 @@ app.get("*",(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log(`Server is runing in : http://localhost:${port}/`)
+    console.log(`Server is runing in : http://localhost:${port}/quotes`)
 })
