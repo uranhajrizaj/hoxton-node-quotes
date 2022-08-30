@@ -56,8 +56,7 @@ const quotes=[
 }
 
 ]
-const randomQuoteIndex=Math.floor(quotes.length*Math.random())
-const randomQuote=quotes[randomQuoteIndex]
+
 
 app.use(cors())
 
@@ -66,7 +65,7 @@ app.get("/quotes",(req,res)=>{
 })
 
 app.get("/random",(req,res)=>{
-    res.send(randomQuote)
+    res.send(quotes[Math.floor(quotes.length*Math.random())])
 })
 
 app.get("*",(req,res)=>{
