@@ -27,7 +27,7 @@ const quotes=[
 {
     id:5,
     title:"A man who dares to waste one hour of time has not discovered the value of life.",
-    author:"..."
+    author:""
 },
 {
     id:6,
@@ -58,6 +58,7 @@ const quotes=[
 ]
 
 
+
 app.use(cors())
 
 app.get("/quotes",(req,res)=>{
@@ -65,7 +66,9 @@ app.get("/quotes",(req,res)=>{
 })
 
 app.get("/random",(req,res)=>{
-    res.send(quotes[Math.floor(quotes.length*Math.random())])
+    const randomQuoteIndex=Math.floor(quotes.length*Math.random())
+    const randomQuote=quotes[randomQuoteIndex]
+    res.send(randomQuote)
 })
 
 app.get("*",(req,res)=>{
