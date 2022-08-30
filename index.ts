@@ -1,5 +1,5 @@
 import express from'express'
-
+import cors from 'cors'
 const app=express()
 const port=4000
 
@@ -56,8 +56,8 @@ const quotes=[
 }
 
 ]
-
-app.get("/",(req,res)=>{
+app.use(cors())
+app.get("/quotes",(req,res)=>{
     res.send(quotes)
 })
 app.get("*",(req,res)=>{
