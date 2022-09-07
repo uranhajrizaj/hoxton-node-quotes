@@ -97,8 +97,8 @@ app.patch("/authors/:id", (req, res) => {
   const findAuthor = getAnAuthor.get(req.params);
   if (findAuthor) {
     const updatedAuthor = { ...findAuthor, ...req.body };
-    const info = updateAnAuthor.run(updatedAuthor);
-    if (info.changes) res.send(updatedAuthor);
+    updateAnAuthor.run(updatedAuthor);
+    res.send(updatedAuthor);
   } else res.status(404).send({ error: "Author not found" });
 });
 
@@ -112,8 +112,8 @@ app.patch("/quotes/:id", (req, res) => {
   const findQuote = getAQuoute.get(req.params);
   if (findQuote) {
     const updatedQuote = { ...findQuote, ...req.body };
-    const info = updateAQuote.run(updatedQuote);
-    if (info.changes) res.send(updatedQuote);
+    updateAQuote.run(updatedQuote);
+    res.send(updatedQuote);
   } else res.status(404).send({ error: "Quote not found" });
 });
 
